@@ -5,16 +5,16 @@
 }
   
 body {
-  background-color: beige;
+  background-color: #333;
 }
   
 .wrap {
-  height: 60vh;
+  height: 70vh;
   width: 70vw;
   margin: 10vh auto 0;
   position: relative;	
 }
-  
+
 .wrap > input {
   display: none;
 }
@@ -24,8 +24,9 @@ body {
   width: inherit;
   position: relative;
   background-color: #ddd;
-  box-shadow: 0 0 20px rgba(0, 0, 0, .5);	
-  overflow: hidden;		
+  box-shadow: 0 0 30px rgba(0, 0, 0, .7);	
+  overflow: hidden;
+  margin-bottom: 2rem;		
 }
   
 .slides {
@@ -33,8 +34,8 @@ body {
   position: absolute;
   width: inherit;
   background-position: center;
-  background-size: cover;
-  
+  background-repeat: no-repeat;
+  background-size: cover;  
 }
   
 .slide1 {background-image: url(./assets/img/html5.webp);}
@@ -43,42 +44,54 @@ body {
 .slide4 {background-image: url(./assets/img/node-js.jpg);}
 .slide5 {background-image: url(./assets/img/angular.png);}
 
-.wrap .controls {
-	left: 50%;
-	margin-left: -98px;
-	position: absolute;
-}
-
-.wrap label {
+label {
 	cursor: pointer;
 	display: inline-block;
-	height: 8px;
-	margin: 25px 12px 0 16px;
+	height: 1rem;
+	margin: 1rem 0.8rem 1rem;
 	position: relative;
-	width: 8px;
-	border-radius: 50%;
-	transition: background ease-in-out .5s;
+	width: 1rem;
+	border-radius: 50%;	
+	background-color: rgb(57, 97, 244);
+	transition:  ease-in-out .5s;
 }
 
-.wrap label:after {
-	border: 2px solid #ddd;
-	content: " ";
-	display: block;
-	height: 12px;
-	left: -4px;
-	position: absolute;
-	top: -4px;
-	width: 12px;	
-	border-radius: 50%;
+label:after {	
+    content: " ";
+    display: block;
+    height: 0.7rem;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 0.7rem;
+    border-radius: 50%;
+	transition: ease-in-out .5s;
+	
 }
 
-.wrap label:hover, 
+label:hover {
+  background-color: white;
+  transition: ease-in-out .5s;
+}
+
+
 #slide1:checked ~ .controls label:nth-of-type(1),
 #slide2:checked ~ .controls label:nth-of-type(2),
 #slide3:checked ~ .controls label:nth-of-type(3),
 #slide4:checked ~ .controls label:nth-of-type(4),
 #slide5:checked ~ .controls label:nth-of-type(5) {
-	background: #ddd;
+	border: 0.2rem solid rgb(57, 97, 244);
+	background: inherit;
+	transition: ease-in-out .5s;
+
+}
+
+#slide1:checked ~ .controls label:nth-of-type(1):hover,
+#slide2:checked ~ .controls label:nth-of-type(2):hover,
+#slide3:checked ~ .controls label:nth-of-type(3):hover,
+#slide4:checked ~ .controls label:nth-of-type(4):hover,
+#slide5:checked ~ .controls label:nth-of-type(5):hover {
+  border-color: white;  
 }
 
 .slides {
@@ -91,12 +104,50 @@ body {
   transition: transform ease-in-out .5s, opacity ease-in-out .5s;
 }
 
+.description {
+	position: relative;
+	width: 60%;	
+	font-size: 1.5rem;
+	color: #eee;
+}
+
+.descriptions {
+	opacity: 0;
+	position: absolute;	
+	z-index: 0;
+	transform: scale(.5);
+	transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+}
+
 #slide1:checked ~ .slider > .slide1,
 #slide2:checked ~ .slider > .slide2,
 #slide3:checked ~ .slider > .slide3,
 #slide4:checked ~ .slider > .slide4,
-#slide5:checked ~ .slider > .slide5 {
-	opacity: 1;
-	z-index: 1;
-	transform: scale(1);
+#slide5:checked ~ .slider > .slide5,
+#slide1:checked ~ .description > .description1,
+#slide2:checked ~ .description > .description2,
+#slide3:checked ~ .description > .description3,
+#slide4:checked ~ .description > .description4,
+#slide5:checked ~ .description > .description5 {
+  opacity: 1;
+  z-index: 1;
+  transform: scale(1);
 }
+
+.controls {
+	min-width: 20%;
+	display: flex;
+	justify-content: end;
+}
+
+/*@media (max-width: 768px ) {
+	.slides {
+		background-size: auto;
+	}
+}*/
+
+/*@media (max-width: 1920px ) {
+	.slides {
+		background-size: cover;
+	}
+}*/
