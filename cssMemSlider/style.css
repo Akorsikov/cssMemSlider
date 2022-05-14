@@ -39,7 +39,7 @@ body {
 }
   
 .slide1 {background-image: url(./assets/img/html5.webp);}
-.slide2 {background-image: url(./assets/img/css3.jpg);}
+.slide2 {background-image: url(./assets/img/css3.png);}
 .slide3 {background-image: url(./assets/img/js.png);}
 .slide4 {background-image: url(./assets/img/node-js.jpg);}
 .slide5 {background-image: url(./assets/img/angular.png);}
@@ -140,33 +140,31 @@ label:hover {
 	justify-content: end;
 }
 
-@media (max-width: 920px ) {
 
+
+@media (max-width: 920px ) {
 	.wrap {
     height: 60vh;
   }
 }
 
 @media (max-width: 767px ) {
-
 	.wrap {
     height: 30vh;
   }
-
   .description {  
     top: 5vh;
     width: auto;
     font-size: 1.2rem;
   }
-
   .controls {
     justify-content: center;
   }
-}
-
-@media (max-height: 920px ) {
-  
-  .description {  
-    top: 10vh;
+  @media (max-height: 920px ) {    
+    .description {  
+      top: 10vh;
+    }
   }
 }
+
+
