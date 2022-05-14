@@ -140,14 +140,25 @@ label:hover {
 	justify-content: end;
 }
 
-/*@media (max-width: 768px ) {
-	.slides {
-		background-size: auto;
-	}
-}*/
+@media (max-width: 920px ) {
 
-/*@media (max-width: 1920px ) {
-	.slides {
-		background-size: cover;
-	}
-}*/
+	.wrap {
+    height: 60vh;
+  }
+}
+
+@media (max-width: 767px ) {
+
+	.wrap {
+    height: 30vh;
+  }
+
+  .description {  
+    top: 5vh;
+    width: auto;
+  }
+
+  .controls {
+    justify-content: center;
+  }
+}
