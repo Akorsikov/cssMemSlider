@@ -162,3 +162,10 @@ label:hover {
     justify-content: center;
   }
 }
+
+@media (max-height: 920px ) {
+  
+  .description {  
+    top: 10vh;
+  }
+}
